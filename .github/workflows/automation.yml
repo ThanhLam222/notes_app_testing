@@ -1,0 +1,83 @@
+name: Automation Tests
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+jobs:
+  test_ui:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    - name: Start app with Docker Compose
+      run: docker compose -f ./notes_app/docker-compose.yml up -d
+
+    - name: Wait for server to Start
+      run: |
+        for i in {1..10}; do 
+          curl http://localhost:4000 && break
+          echo "App not ready yet..."
+          sleep 3
+        done
+
+    - name: Run Playwright tests
+      run: npm run test_ui
+
+    - uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+        name: playwright-report
+        path: notes_app_testing/05-Test_script/01-UI_test/playwright-report/
+        retention-days: 30
+
+  test_api:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    env:
+      MONGOMS_DISABLE_POSTINSTALL: "1"
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run API tests
+      run: npm run test_api
+  
+  test_db:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    env:
+      MONGOMS_DISABLE_POSTINSTALL: "1"
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run DB tests
+      run: npm run test_db

@@ -1,0 +1,23 @@
+{
+  "name": "project-root",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "",
+  "workspaces": [
+    "notes_app",
+    "notes_app_testing"
+  ],
+  "dependencies": {
+    "mongoose": "^6.5.2"
+  },
+  "scripts": {
+    "test-ui": "npx playwright test --config=./notes_app_testing/05-Test_script/01-UI_test/playwright.config.js",
+    "test-api": "npx --node-options=--experimental-vm-modules jest --config ./notes_app_testing/05-Test_script/jest.config.mjs --testMatch '**/02-API_test/**/*.test.js'",
+    "test-db": "npx --node-options=--experimental-vm-modules jest --config ./notes_app_testing/05-Test_script/jest.config.mjs --testMatch '**/03-DB_test/**/*.test.js'"
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

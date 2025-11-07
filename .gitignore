@@ -1,0 +1,19 @@
+
+# Playwright
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+playwright/.auth/
+
+# App draft
+other/
+draft_technique/
+.vscode/
+*test-estimation.xlsx
+*test-schedule.xlsx
+
+#Jest
+coverage/
+
