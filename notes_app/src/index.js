@@ -11,7 +11,7 @@ async function main() {
     await createUser();
   }
 
-  app.listen(app.get("port"));
+  app.listen(app.get("port"), '0.0.0.0');
 
   console.log("Server on port", app.get("port"));
   console.log("Environment:", process.env.NODE_ENV);
