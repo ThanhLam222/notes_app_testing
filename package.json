@@ -6,7 +6,7 @@
   "description": "",
   "workspaces": [
     "notes_app",
-    "notes_app_testing"
+    "notes_app_testing/05-Test_script"
   ],
   "dependencies": {
     "mongoose": "^6.5.2"
