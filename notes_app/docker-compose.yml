@@ -3,7 +3,6 @@ name: "note_apps"
 services:
   web:
     container_name: web
-    image: node
     restart: always
     build: .
     ports:
@@ -19,7 +18,8 @@ services:
       - NODE_ENV=development
       - CREATE_ADMIN=true
       - CREATE_USER=true
-    command: /bin/sh -c 'npm install && npm run dev'
+    command: /bin/sh -c 'npm cache clean --force && npm install && npm run dev'
+
   mongo:
     container_name: database
     image: mongo
