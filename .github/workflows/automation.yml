@@ -22,15 +22,25 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Start app with Docker Compose
-      run: docker compose -f ./notes_app/docker-compose.yml up -d
+      run: |
+          docker compose -f ./notes_app/docker-compose.yml up -d
+          echo "Checking running containers..."
+          docker ps
 
     - name: Wait for server to Start
       run: |
-        for i in {1..10}; do 
-          curl http://localhost:4000 && break
-          echo "App not ready yet..."
-          sleep 3
-        done
+         echo "Waiting for web server..."
+         for i in {1..30}; do
+          if curl -s http://localhost:4000/ > /dev/null; then
+            echo "Server is up!"
+            exit 0
+          fi
+          echo "App not ready yet... retry ($i/30)"
+          sleep 4
+         done
+         echo "Server did not start in time."
+         docker compose -f ./notes_app/docker-compose.yml logs
+         exit 1
 
     - name: Run Playwright tests
       run: npm run test-ui
@@ -39,8 +49,12 @@ jobs:
       if: ${{ !cancelled() }}
       with:
         name: playwright-report
-        path: notes_app_testing/05-Test_script/01-UI_test/playwright-report/
+        path: notes_app_testing/05-Test_script/01-UI_test/
         retention-days: 30
+    
+    - name: Teardown Docker
+      if: always()
+      run: docker compose -f ./notes_app/docker-compose.yml down --volumes --remove-orphans
 
   test_api:
     timeout-minutes: 60
