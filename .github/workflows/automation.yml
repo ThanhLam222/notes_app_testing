@@ -49,7 +49,7 @@ jobs:
       if: ${{ !cancelled() }}
       with:
         name: playwright-report
-        path: notes_app_testing/05-Test_script/01-UI_test/
+        path: playwright-report/
         retention-days: 30
     
     - name: Teardown Docker
