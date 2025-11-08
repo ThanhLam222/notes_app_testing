@@ -44,12 +44,21 @@ jobs:
 
     - name: Run Playwright tests
       run: npm run test-ui
+    
+    - name: List ALL files after test
+      if: always()
+      run: |
+       echo "=== Finding playwright-report ==="
+       find . -name "playwright-report" -type d
+       echo ""
+       echo "=== Finding ANY html files ==="
+       find . -name "index.html" | head -20
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
         name: playwright-report
-        path: playwright-report/
+        path: '**/playwright-report/'
         retention-days: 30
     
     - name: Teardown Docker
