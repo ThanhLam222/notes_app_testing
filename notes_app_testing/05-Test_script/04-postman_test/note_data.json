@@ -1,0 +1,47 @@
+[
+  {
+    "allNotes": true,
+    "getNewForm": true,
+    "postNewNote": false,
+    "editNote": false,
+    "deleteNote": false,
+    "hasNote": false
+  },
+  {
+    "title": "Adficio spiritus aspicio laudantium cimentarius.",
+    "description": "Velum aliquid accommodo aeneus stultus derelinquo delego. Vereor supra deleniti arx odio. Sto usus alter decens caste. Clam voco tepesco comedo stella spero verus tersus vulgaris pectus.",
+    "allNotes": false,
+    "getNewForm": false,
+    "postNewNote": true,
+    "editNote": false,
+    "deleteNote": false
+  },
+  {
+    "title": "Terga ventosus auditor quaerat delectus.",
+    "description": "Aequus caries virga convoco ipsum thorax aliqua beneficium. Soleo synagoga ustulo coma officiis cinis absens asper aestus. Validus dolores conspergo aranea ceno substantia. Defendo cuppedia tres ullam xiphias illum apto.",
+    "allNotes": false,
+    "getNewForm": false,
+    "postNewNote": true,
+    "editNote": false,
+    "deleteNote": false
+  },
+  {
+    "title": "Beatus confero tandem clibanus peccatus.",
+    "description": "Thymbra spero aperte denuo voluptatum attonbitus terebro. Aspicio bos carpo speciosus bestia tardus confugo. Similique degenero tergeo adulescens vos supra abduco tenax debilito capio. Caveo thorax vix dedico.",
+    "allNotes": false,
+    "getNewForm": false,
+    "postNewNote": true,
+    "editNote": false,
+    "deleteNote": false
+  },
+  {
+    "title": "Vitae demoror vado expedita abutor.",
+    "description": "Attollo molestiae tantum vetus nam denuncio. Libero balbus calculus trepide blandior thesaurus defero absconditus. Sordeo artificiose modi demitto cruciamentum defetiscor stabilis undique. Cui aegrotatio crinis denique amor defendo contego demergo.",
+    "allNotes": true,
+    "getNewForm": false,
+    "postNewNote": false,
+    "editNote": true,
+    "deleteNote": true,
+    "hasNote": true
+  }
+]
