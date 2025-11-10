@@ -23,7 +23,7 @@ However, I made several modifications to the original source code to better supp
 These changes were made only to improve application stability and test coverage.
 The core logic and application features remain the same as the original repository.
 
-**b. Testing process**
+**b. Testing preparation**
 
 I manually analyzed the application's source code and APIs to understand the system workflows, expected behaviors, and endpoint structures.
 
