@@ -82,7 +82,7 @@ Based on this analysis, I developed:
 ## Test Report
 - **Purpose:** Summarize test results and provide recommendations to fix source code.
 - **Location:**
-  - `notes_app_testing/06-Test_report/
+  - `notes_app_testing/06-Test_report/`
   - This folder includes:
     - `test_report.md`
     - Evidence such as: video and snapshot of UI, API, Database, and manual test (except Postman).
