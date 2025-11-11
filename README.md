@@ -1,13 +1,44 @@
 # notes_app_testing
-> Automated testing project for the Notes App, with a small set of manual test cases included.
+> A full-stack testing project covering **UI**, **API**, and **Database** layers for a real web application.  
+This project demonstrates a complete testing workflow — from requirement analysis to automation and reporting.
+
+## 🔧 Tech Stack
 
 **Automation**
-- **UI Tests:** Playwright
-- **API Tests:** Supertest + Jest
+- **UI Tests:** Playwright + Page Object Models
+- **API Tests:** Supertest + Jest + Mongo Memory Server + Service Object Model
 - **Postman:** Included as a demonstration of Postman workflow skills (not the primary testing framework)
+- **Data Tests:** Supertest + Jest + Mongo Memory Server
+- **CI:** GitHub Actions - Automatically runs test suites on push
 
 **Manual:**
 - 1–2 manual test cases to demonstrate manual test workflow and documentation.
+
+## ⭐ Highlights (What makes this project stand out)
+
+- Built **automation framework from scratch** (not based on templates).
+- Applied **Page Object Model (POM)** to optimize UI test maintainability.
+- Applied **Service Object Model (SOM)** for clean and reusable API test logic.
+- Integrated **Mongo Memory Server** → API + DB tests run without external dependencies.
+- Configured **CI pipeline** to run all tests automatically on GitHub Actions.
+- Wrote complete **Requirements, Test Plan, Test Cases, Test Data, Test Script and Test Report**.
+- **Modified source code** of the Notes App to:
+  - Improve error handling (`try/catch`)
+  - Add second user for authorization test scenarios
+  - Fix CI-related environment issues
+  - (Demonstrates ability to read and debug production code)
+## ▶️ How to Run Tests
+### UI Tests
+`npm run test-ui`
+### API Tests
+`npm run test-api`
+### Database Tests
+`npm run test-db`
+
+Clone the repository, install dependencies with `npm install`, then run tests as described above.
+    
+**For full project details, see below.**
+---
 ## Overview
 I built this testing project from scratch.
 
@@ -48,7 +79,7 @@ Based on this analysis, I developed:
 - **Test data** required to support execution (.xlsx file):
   - See in `notes_app_testing/04-Test_data`
   - Or view via Google drive link: [test_data](https://docs.google.com/spreadsheets/d/1_du5Od-tr1ssKdXy9O8WD9KJFp9eD-CO/edit?usp=sharing&ouid=108535092432212488723&rtpof=true&sd=true)
-## Test Script
+## Test Scripts
 ### UI Tests
 - **Purpose:** Verify user interface elements, interactions, and end-to-end workflows from the user's perspective. Covers common user flows such as creating, updating, and deleting notes, as well as authentication UI.
 - **Framework and Tool:** Playwright
