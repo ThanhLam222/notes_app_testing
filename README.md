@@ -1,5 +1,5 @@
 # notes_app_testing
-> A full-stack testing project covering **UI**, **API**, and **Database** layers for a real web application.  
+> A full-stack testing project covering **UI**, **API**, and **Database** layers for an existing web application.  
 This project demonstrates a complete testing workflow — from requirement analysis to automation and reporting.
 
 ## 🔧 Tech Stack
