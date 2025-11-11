@@ -100,8 +100,8 @@ Based on this analysis, I developed:
 ### Postman Tests
 - **Purpose:** Validate backend API endpoints with all happy cases to demonstrate Postman skills.
 - **Location:**
-  - `notes_app_testing/05-Test_script/04-postman_test`:
-    - This folder contains
+  - `notes_app_testing/05-Test_script/04-postman_test/`
+    - This folder contains:
       -  `note_data.json`
       -  Collection `.json` file
       -  Environment variables `.json` file
